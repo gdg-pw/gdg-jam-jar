@@ -1,0 +1,67 @@
+/* Komponenty: przyciski, karty, generator */
+
+/* ---------- Przyciski ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font: inherit; font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary   { background: var(--primary);   color: var(--on-accent); }
+.btn-primary:hover   { box-shadow: var(--glow); color: var(--on-accent); }
+
+.btn-secondary { background: var(--secondary); color: var(--on-accent); }
+.btn-secondary:hover { box-shadow: 0 0 24px color-mix(in srgb, var(--secondary) 40%, transparent); color: var(--on-accent); }
+
+.btn-ghost { background: transparent; color: var(--text-main); border-color: var(--border); }
+.btn-ghost:hover { border-color: var(--primary); color: var(--primary); }
+
+/* ---------- Karty ---------- */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+a.card { display: block; color: inherit; }
+a.card:hover { transform: translateY(-4px); border-color: var(--secondary); }
+.card h3 { margin-bottom: 0.25rem; color: var(--primary); }
+.card .author { font-size: 0.85rem; color: var(--text-muted); }
+
+/* ---------- Generator ---------- */
+.generator { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.result {
+  min-height: 110px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem;
+  background: var(--bg-dark);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  font-size: 1.5rem; font-weight: 600; text-align: center;
+  color: var(--text-muted);
+}
+.result.active {                      /* po losowaniu */
+  color: var(--primary);
+  border-style: solid;
+  border-color: var(--secondary);
+  animation: pop 0.25s ease;
+}
+@keyframes pop { from { transform: scale(0.96); opacity: 0.5; } to { transform: scale(1); opacity: 1; } }
+
+/* Historia */
+.history { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.history li {
+  padding: 0.25rem 0.7rem;
+  background: var(--bg-chip);
+  border-radius: 999px;
+  font-size: 0.8rem; color: var(--text-muted);
+  font-family: var(--font-mono);
+}

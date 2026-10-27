@@ -1,0 +1,46 @@
+/* Układ: kontener, header, sekcje, siatka, footer */
+
+.container { max-width: var(--width); margin: 0 auto; padding: 0 1.25rem; }
+
+/* Header */
+.header {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg-dark) var(--header-opacity), transparent);
+  -webkit-backdrop-filter: blur(var(--header-blur));
+  backdrop-filter: blur(var(--header-blur));
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex; justify-content: space-between; align-items: center; height: 50px;
+  max-width: calc(var(--width) + var(--header-shift) * 2);  /* szerszy header = logo i menu wędrują na boki */
+}
+.nav { display: flex; gap: 1.25rem; }
+.nav a { color: var(--text-muted); font-size: 0.95rem; }
+.nav a:hover { color: var(--primary); }
+
+/* Hero */
+.hero { padding: 6rem 0 4rem; text-align: center; }
+.hero p { margin: 1rem 0; }
+.hero .btn { margin-top: 1rem; }
+
+/* Sekcje */
+.section { padding: 3rem 0; }
+
+/* Siatka galerii */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* 260px = min. szerokość karty */
+  gap: var(--gap);
+}
+
+/* Rząd przycisków */
+.row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+/* Footer */
+.footer { padding: 2rem 0; margin-top: 3rem; border-top: 1px solid var(--border); text-align: center; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav { gap: 0.8rem; font-size: 0.85rem; }
+  .hero { padding: 4rem 0 2rem; }
+}

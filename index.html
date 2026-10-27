@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motywy Pracy | GDG On Campus PW</title>
+  <link rel="icon" type="image/png" href="assets/icon.png">
+
+  <!-- Font: Google Sans Code z Google Fonts (zmiana też w css/variables.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Kolejność ma znaczenie: variables -> base -> layout -> components -> effects -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/effects.css">
+</head>
+<body>
+
+  <!-- Tło z pływającymi symbolami (wypełnia js/effects.js) -->
+  <div id="bg-canvas"></div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#top"><img class="logo-img" src="assets/logo.webp" alt="GDG On Campus PW"></a>
+      <nav class="nav">
+        <a href="#generator">Generator</a>
+        <a href="#gallery">Galeria</a>
+        <!-- Link ustawia js/main.js z FORM_URL (js/data.js) -->
+        <a id="nav-form" href="#" target="_blank" rel="noopener">Wrzuć pracę</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <!-- Kliknij 5x = easter egg -->
+        <img id="main-logo" class="main-logo" src="assets/logo.webp" alt="GDG On Campus PW">
+
+        <h1>Nie masz pomysłu na projekt?<br><span class="gradient-text">Wylosuj motyw pracy.</span></h1>
+        <p class="muted">Kliknij, dostań temat, zrób stronę i wrzuć ją do galerii.</p>
+        <p class="muted small">Autor pomysłu: <strong>Lawarance Chettiar</strong></p> 
+        <a class="btn btn-primary" href="#generator">Losuj teraz</a>
+
+        <!-- Terminal (+ corgi pod spodem) -->
+        <div class="terminal-wrapper">
+          <div class="corgi-popup" id="corgi-popup">
+            <div class="woof-bubble" id="woof-bubble">woof!</div>
+            <img src="assets/popup.webp" alt="">
+          </div>
+          <div class="terminal">
+            <div class="terminal-header">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+            </div>
+            <!-- Teksty terminala: zmieniaj śmiało. Kolory: t-green / t-blue / t-yellow -->
+            <div class="terminal-text" id="terminal-text">
+              <span class="t-green">[INIT]</span> Witaj w Motywy Pracy!<br>
+              <span class="t-blue">[INFO]</span> Wylosuj motyw i zrób do niego stronę<br>
+              <span class="t-red">[HINT]</span> nie wiesz jak zacząć? Sprawdź Pinterest<br>
+              <span class="t-yellow">[TODO]</span> Gdy skończysz, wrzuć link do galerii ↓
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GENERATOR -->
+    <section id="generator" class="section">
+      <div class="container">
+        <h2>Generator</h2>
+
+        <div class="card generator">
+          <!-- Wylosowany motyw -->
+          <div id="result" class="result">Kliknij „Losuj”</div>
+
+          <div class="row">
+            <button id="btn-roll" class="btn btn-primary">Losuj</button>
+            <button id="btn-copy" class="btn btn-ghost">Kopiuj</button>
+          </div>
+
+          <!-- Historia ostatnich losowań -->
+          <ul id="history" class="history"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2>Galeria prac</h2>
+        <div id="gallery-grid" class="grid"></div>
+      </div>
+    </section>
+
+    <!-- FORMS -->
+    <section id="submit" class="section">
+      <div class="container center">
+        <h2>Zrobione?</h2>
+        <p class="muted">Wrzuć link do swojej strony.</p>
+        <!-- Link do forms ustawiasz w js/data.js (FORM_URL) -->
+        <a id="btn-form" class="btn btn-secondary" href="#" target="_blank" rel="noopener">Wrzuć swoją stronę</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <!-- Socials: usuń cały <a>...</a>, żeby wyłączyć -->
+      <div class="socials">
+        <a class="social-link" href="https://gdg.community.dev/gdg-on-campus-politechnika-warszawska-warsaw-poland/" target="_blank" rel="noopener">
+          <img src="assets/socials/gdg.svg" width="22" height="22" alt=""><span>GDG Community</span>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/gdg_pw/" target="_blank" rel="noopener">
+          <img src="assets/socials/instagram.svg" width="22" height="22" alt=""><span>Instagram</span>
+        </a>
+        <a class="social-link" href="https://www.facebook.com/gdg.pw" target="_blank" rel="noopener">
+          <img src="assets/socials/facebook.svg" width="22" height="22" alt=""><span>Facebook</span>
+        </a>
+        <a class="social-link" href="https://discord.com/invite/vNW4vXVwqH" target="_blank" rel="noopener">
+          <img src="assets/socials/discord.svg" width="22" height="22" alt=""><span>Discord</span>
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/company/google-developer-group-pw/" target="_blank" rel="noopener">
+          <img src="assets/socials/linkedin.svg" width="22" height="22" alt=""><span>LinkedIn</span>
+        </a>
+
+      </div>
+      <p class="muted small">GDG na Campus Politechniki Warszawskiej</p>
+    </div>
+  </footer>
+
+  <!-- Zwykłe skrypty (nie moduły), żeby działało też po dwukliku na index.html -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
