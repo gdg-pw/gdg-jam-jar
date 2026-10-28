@@ -56,6 +56,14 @@ Dane z formularza traktujemy jak niezaufane: wszystko jest escapowane, a do gale
 - Kliknij duże logo 5 razy.
 - Konami code: ↑ ↑ ↓ ↓ ← → ← → B A
 
+## Deploy
+
+Strona stoi na https://jamjar.gdgpw.pl i wdraża się sama. Wystarczy push na `main`: w ciągu ok. 2 minut serwer GDG buduje obraz z `Dockerfile`, sprawdza nową wersję obok starej i dopiero wtedy ją podmienia. Jak coś się wysypie, zostaje poprzednia wersja.
+
+Każdy nowy plik w repo trafia na stronę, chyba że jest wpisany w `.dockerignore`. Portu i montowań w `docker-compose.yml` nie zmieniaj, serwer odrzuci taki deploy.
+
+Lokalnie tak samo jak na serwerze: `docker compose up --build` i http://localhost:8092.
+
 ## Autor
 
 Strona: Lawarance Chettiar ([@lawarance](https://github.com/lawarance)). Wydarzenie organizuje GDG on Campus PW.

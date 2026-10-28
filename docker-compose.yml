@@ -1,0 +1,9 @@
+services:
+  gdgpw-jamjar:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gdgpw-jamjar
+    restart: always
+    ports:
+      - "8092:80"
