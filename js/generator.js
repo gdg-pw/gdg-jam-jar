@@ -21,11 +21,11 @@ function roll() {
 
   current = next;
   showResult();
-  addToHistory(next);
+  addToHistory(next.name);
 }
 
 function showResult() {
-  els.result.textContent = current;
+  els.result.innerHTML = `<span>${current.name}</span><span class="result-desc">${current.desc}</span>`;
   els.result.classList.remove("active");
   void els.result.offsetWidth;            // restart animacji
   els.result.classList.add("active");
@@ -39,7 +39,7 @@ function addToHistory(text) {
 
 async function copyCurrent() {
   if (!current) return;
-  const ok = await copyText(current);
+  const ok = await copyText(current.name);
   els.copy.textContent = ok ? "Skopiowano ✓" : "Błąd";
   setTimeout(() => (els.copy.textContent = "Kopiuj"), 1200);
 }

@@ -1,4 +1,4 @@
-/* Komponenty: przyciski, karty, generator */
+/* Komponenty: przyciski, karty, generator, poradnik */
 
 /* ---------- Przyciski ---------- */
 .btn {
@@ -40,7 +40,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--secondary); }
 
 .result {
   min-height: 110px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem;
   padding: 1.5rem;
   background: var(--bg-dark);
   border: 2px dashed var(--border);
@@ -54,6 +54,7 @@ a.card:hover { transform: translateY(-4px); border-color: var(--secondary); }
   border-color: var(--secondary);
   animation: pop 0.25s ease;
 }
+.result-desc { font-size: 0.85rem; font-weight: 400; color: var(--text-muted); white-space: nowrap; }   /* opis zawsze w jednej linii */
 @keyframes pop { from { transform: scale(0.96); opacity: 0.5; } to { transform: scale(1); opacity: 1; } }
 
 /* Historia */
@@ -64,4 +65,12 @@ a.card:hover { transform: translateY(-4px); border-color: var(--secondary); }
   border-radius: 999px;
   font-size: 0.8rem; color: var(--text-muted);
   font-family: var(--font-mono);
+}
+
+/* ---------- Poradnik ---------- */
+.steps { padding-left: 1.4rem; margin-bottom: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.steps li::marker { color: var(--primary); font-weight: 700; }
+
+@media (max-width: 600px) {
+  .result { padding: 1.25rem 0.75rem; font-size: 1.3rem; }   /* więcej miejsca na opis w jednej linii */
 }

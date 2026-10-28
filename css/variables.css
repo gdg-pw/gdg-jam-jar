@@ -11,10 +11,10 @@
   --green:  #34A853;
 
   /* --- Tła i tekst --- */
-  --bg:         #1E1F21;   /* tło strony */
-  --bg-dark:    #18191b;   /* header, inputy, pole wyniku (ciemniej) */
-  --bg-card:    #25262a;   /* karty. inne: var(--bg) = takie same jak tło */
-  --bg-chip:    #35373b;   /* małe plakietki (historia) */
+  --bg:         #181818;   /* tło strony */
+  --bg-dark:    #121212;   /* header, pole wyniku (ciemniej) */
+  --bg-card:    #202020;   /* karty. inne: var(--bg) = takie same jak tło */
+  --bg-chip:    #2e2e2e;   /* małe plakietki (historia, code) */
   --border:     #5F6468;   /* ramki */
 
   --text-main:  #E8EAED;
@@ -25,14 +25,14 @@
      ========================================================== */
   --primary:    var(--green);     /* główny kolor (przyciski, akcenty). inne: var(--blue), var(--yellow), var(--red) */
   --secondary:  var(--blue);      /* drugi kolor (linki, hover kart). inne: var(--yellow), var(--red) */
-  --on-accent:  #1E1F21;          /* tekst na kolorowym przycisku */
+  --on-accent:  #181818;          /* tekst na kolorowym przycisku */
 
   /* Gradient w nagłówku. Inne: (135deg, var(--blue), var(--green)) = 2 kolory */
   --gradient: linear-gradient(45deg, var(--blue), var(--red), var(--yellow), var(--green));
 
   /* --- Czcionki --- */
-  --font-sans: "Google Sans Code", ui-monospace, monospace;  /* tekst */
-  --font-mono: "Google Sans Code", ui-monospace, monospace;  /* symbole w tle, historia */
+  --font-sans: "Google Sans Flex", system-ui, sans-serif;    /* tekst */
+  --font-mono: "Google Sans Code", ui-monospace, monospace;  /* terminal, kod, symbole w tle, historia */
 
   /* --- Wygląd --- */
   --radius:  16px;    /* zaokrąglenie. 0 = ostre, 24px = bardzo okrągłe */

@@ -27,10 +27,11 @@
 main, .footer { position: relative; z-index: 1; }
 
 /* ---------- Logo ---------- */
-.logo-img { height: 44px; width: auto; display: block; }     /* logo w headerze */
+.logo-img { height: 48px; width: auto; display: block; }     /* znak w headerze */
 
 .main-logo {                                                  /* duże logo w hero */
-  width: 500px; max-width: 90%; height: auto;
+  width: 320px; max-width: 70%; height: auto;
+  border-radius: var(--radius);                               /* fale w logo nie kończą się ostrą krawędzią */
   cursor: pointer; user-select: none;
 }
 .main-logo.shaking { animation: logoShake 0.6s ease; }
@@ -55,6 +56,7 @@ main, .footer { position: relative; z-index: 1; }
 }
 .terminal {
   position: relative; z-index: 2;
+  font-family: var(--font-mono);
   background: var(--bg);
   border: 3px solid var(--border);
   border-radius: 20px;
@@ -75,13 +77,13 @@ main, .footer { position: relative; z-index: 1; }
 
 /* ---------- Corgi (Konami: ↑↑↓↓←→←→ B A) ---------- */
 .corgi-popup {
-  position: absolute; bottom: 0; right: 6%;
-  width: 280px; max-width: 55vw;
-  transform: translateY(100%);
+  position: absolute; top: 0; right: 0;
+  width: 38%;                                   /* skaluje się z terminalem, nie wchodzi pod „Losuj motyw” */
+  transform: translateY(20%);                   /* schowany za terminalem */
   z-index: 1; pointer-events: none;
   transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.corgi-popup.peeking { transform: translateY(calc(-100% - 40px)); }
+.corgi-popup.peeking { transform: translateY(-100%); }   /* ile wystaje nad terminal */
 .corgi-popup img { width: 100%; display: block; }
 .woof-bubble {
   position: absolute; top: -38px; left: 20px;
@@ -112,7 +114,7 @@ main, .footer { position: relative; z-index: 1; }
 }
 
 @media (max-width: 600px) {
-  .logo-img { height: 36px; }
+  .logo-img { height: 40px; }
   .terminal { padding: 20px 22px; }
   .terminal-text { font-size: 0.85rem; }
   .social-link span { display: none; }

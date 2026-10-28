@@ -3,54 +3,62 @@
    ========================================================== */
 
 // Link do Google Forms (wklej swój)
-const FORM_URL = "https://forms.cloud.microsoft/e/Rt7JtNzaHC";
+const FORM_URL = "https://forms.gle/LEERmQVihVWd31N26";
 
-// Motywy pracy: jeden motyw = jedna linia
+// Anonimowa ankieta po wydarzeniu
+const SURVEY_URL = "https://forms.gle/uBbXiqTCvbjWLi7q8";
+
+// Motywy (Flavor #1: Portfolio): { name, desc }. Opis krótki (~30 znaków), musi się zmieścić w jednej linii na telefonie
 const THEMES = [
-  "Portfolio w stylu cyberpunkowym",
-  "Portfolio w stylu pastelowym",
-  "Portfolio w stylu minimalistycznym",
-  "Portfolio w stylu terminala Linux",
-  "Portfolio w stylu retro lat 80.",
-  "Portfolio w stylu Windows 98",
-  "Portfolio w stylu vaporwave",
-  "Portfolio w stylu synthwave",
-  "Portfolio w stylu brutalistycznym",
-  "Portfolio w stylu cozy",
-  "Portfolio w stylu dark mode",
-  "Portfolio w stylu glassmorphism",
-  "Portfolio w stylu neumorphism",
-  "Portfolio w stylu Y2K",
-  "Portfolio w stylu pixel art",
-  "Portfolio w stylu retro arcade",
-  "Portfolio w stylu anime",
-  "Portfolio w stylu fantasy",
-  "Portfolio w stylu dark academia",
-  "Portfolio w stylu cottagecore",
-  "Portfolio w stylu nature i organic",
-  "Portfolio w stylu skandynawskim",
-  "Portfolio w stylu luksusowym",
-  "Portfolio w stylu editorial",
-  "Portfolio w stylu monochromatycznym",
-  "Portfolio w stylu skeuomorficznym",
-  "Portfolio w stylu industrialnym",
-  "Portfolio w stylu futurystycznym",
-  "Portfolio w stylu space i sci-fi",
-  "Portfolio w stylu hand-drawn",
-  "Portfolio w stylu old money",
-  "Portfolio w stylu Memphis Design",
-  "Portfolio w stylu low-poly 3D",
-  "Portfolio w stylu gradientów i aurora",
-  "Portfolio w stylu cybercore",
-  "Portfolio w stylu retrofuturystycznym",
-  "Portfolio w stylu blueprint",
-  "Portfolio w stylu skejtowym i streetwear",
-  "Portfolio w stylu kawaii",
-  "Portfolio w stylu gothic"
+  { name: "Cyberpunk",           desc: "neony, ciemne miasto, glitch" },
+  { name: "Pastele",             desc: "jasne, miękkie kolory" },
+  { name: "Minimalizm",          desc: "dużo pustej przestrzeni" },
+  { name: "Terminal Linux",      desc: "czarne tło, zielony tekst" },
+  { name: "Retro lata 80.",      desc: "neon, kasety, VHS" },
+  { name: "Windows 95",          desc: "szare okna i pasek Start" },
+  { name: "Vaporwave",           desc: "róż, turkus, posągi, lata 90." },
+  { name: "Synthwave",           desc: "zachód słońca, siatka, neon" },
+  { name: "Brutalizm",           desc: "surowo, grube ramki, bez ozdób" },
+  { name: "Cozy",                desc: "ciepło, kawa, koc i lampka" },
+  { name: "Glassmorphism",       desc: "matowe szkło i rozmycie" },
+  { name: "Neumorphism",         desc: "miękkie, wypukłe przyciski" },
+  { name: "Y2K",                 desc: "chrom, błysk, rok 2000" },
+  { name: "Pixel art",           desc: "grafika z pikseli, 8-bit" },
+  { name: "Retro arcade",        desc: "automaty, punkty, Insert Coin" },
+  { name: "Anime",               desc: "kreska japońskiej animacji" },
+  { name: "Fantasy",             desc: "smoki, magia, pergamin" },
+  { name: "Dark academia",       desc: "stare książki, biblioteka" },
+  { name: "Cottagecore",         desc: "wieś, kwiaty, domowy chleb" },
+  { name: "Nature i organic",    desc: "liście, drewno, zieleń" },
+  { name: "Styl skandynawski",   desc: "jasne drewno, biel, prosto" },
+  { name: "Luksus",              desc: "czerń, złoto, elegancja" },
+  { name: "Editorial",           desc: "układ jak w magazynie" },
+  { name: "Monochrom",           desc: "jeden kolor, wiele odcieni" },
+  { name: "Skeuomorfizm",        desc: "jak prawdziwe przedmioty" },
+  { name: "Industrial",          desc: "beton, stal, rury" },
+  { name: "Futuryzm",            desc: "świat za 100 lat" },
+  { name: "Kosmos i sci-fi",     desc: "gwiazdy, planety, statki" },
+  { name: "Hand-drawn",          desc: "szkic długopisem w zeszycie" },
+  { name: "Old money",           desc: "klasyka, tweed, dyskretny luksus" },
+  { name: "Memphis Design",      desc: "kolorowe kształty, lata 80." },
+  { name: "Gradienty i aurora",  desc: "płynne przejścia kolorów" },
+  { name: "Retrofuturyzm",       desc: "przyszłość widziana z lat 60." },
+  { name: "Blueprint",           desc: "niebieski plan techniczny" },
+  { name: "Skate i streetwear",  desc: "graffiti, naklejki, ulica" },
+  { name: "Kawaii",              desc: "słodkie, różowe, uśmiechnięte" },
+  { name: "Gothic",              desc: "czerń, świece, gotyckie litery" },
+  { name: "Komiks",              desc: "kadry, dymki, kropki rastra" },
+  { name: "Mapa skarbów",        desc: "pergamin, piraci, krzyżyk X" },
+  { name: "Tablica kredowa",     desc: "kreda na zielonej tablicy" },
+  { name: "Bauhaus",             desc: "koła, kwadraty, czyste kolory" }
 ];
 
 
-// Prace z formsa – wklejasz ręcznie: { title, author, url }
+// Galeria z Google Sheets: link CSV do opublikowanej zakładki "galeria"
+// (Plik → Udostępnij → Opublikuj w internecie → galeria, CSV). Pusty = tylko SUBMISSIONS poniżej
+const GALLERY_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQFlTK3UaE_AJfqu4IM5vTGOKxBfVBy7AXIGFWWPq8Jf110Gvzwjn2FZ-QLjYjaCJGTvIHC_okKuNwU/pub?gid=0&single=true&output=csv";
+
+// Prace wpisane ręcznie (pokazują się zawsze, przed tymi z arkusza): { title, author, url }
 const SUBMISSIONS = [
   // { title: "Tytuł", author: "Imię Nazwisko", url: "https://nick.github.io/projekt/" },
 ];

@@ -3,6 +3,7 @@
 .container { max-width: var(--width); margin: 0 auto; padding: 0 1.25rem; }
 
 /* Header */
+html { scroll-padding-top: 60px; }   /* = wysokość headera, nagłówki sekcji nie chowają się pod nim */
 .header {
   position: sticky; top: 0; z-index: 10;
   background: color-mix(in srgb, var(--bg-dark) var(--header-opacity), transparent);
@@ -11,9 +12,13 @@
   border-bottom: 1px solid var(--border);
 }
 .header-inner {
-  display: flex; justify-content: space-between; align-items: center; height: 50px;
+  display: flex; justify-content: space-between; align-items: center; height: 60px;
   max-width: calc(var(--width) + var(--header-shift) * 2);  /* szerszy header = logo i menu wędrują na boki */
 }
+.brand { display: flex; align-items: center; gap: 0.7rem; color: var(--text-main); }
+.brand:hover { color: var(--text-main); }
+.brand-text { font-size: 0.95rem; font-weight: 600; line-height: 1.2; transform: translateY(6px); }  /* środek nawiasów, nie obrazka (corgi wystaje u góry) */
+.brand-text small { font-size: inherit; font-weight: 400; color: var(--text-muted); }
 .nav { display: flex; gap: 1.25rem; }
 .nav a { color: var(--text-muted); font-size: 0.95rem; }
 .nav a:hover { color: var(--primary); }
@@ -32,6 +37,7 @@
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* 260px = min. szerokość karty */
   gap: var(--gap);
 }
+.grid > p { grid-column: 1 / -1; }   /* komunikat „pusto” na całą szerokość */
 
 /* Rząd przycisków */
 .row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
@@ -41,6 +47,7 @@
 
 /* Mobile */
 @media (max-width: 600px) {
+  .brand-text { display: none; }   /* na telefonie sam znak, inaczej menu się nie mieści */
   .nav { gap: 0.8rem; font-size: 0.85rem; }
   .hero { padding: 4rem 0 2rem; }
 }

@@ -3,13 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Motywy Pracy | GDG On Campus PW</title>
-  <link rel="icon" type="image/png" href="assets/icon.png">
+  <title>GDG Jam Jar: Portfolio Flavor | GDG on Campus PW</title>
+  <meta name="description" content="Wylosuj motyw, zrób w nim swoje portfolio i wrzuć je na GitHub Pages. GDG Jam Jar, GDG on Campus PW.">
 
-  <!-- Font: Google Sans Code z Google Fonts (zmiana też w css/variables.css) -->
+  <!-- Podgląd linku (Discord, Messenger, FB, LinkedIn). og:url i og:image muszą mieć pełny adres: podmień DOMENA -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GDG on Campus PW">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="GDG Jam Jar: Portfolio Flavor">
+  <meta property="og:description" content="Wylosuj motyw, zrób w nim swoje portfolio i wrzuć je na GitHub Pages.">
+  <meta property="og:url" content="https://DOMENA/">
+  <meta property="og:image" content="https://DOMENA/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo GDG on Campus PW i napis GDG Jam Jar, Flavor #1: Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon.png">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+
+  <!-- Fonty z Google Fonts: Google Sans Flex (tekst) + Google Sans Code (terminal). Zmiana też w css/variables.css -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;600;700;800&family=Google+Sans+Code:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Kolejność ma znaczenie: variables -> base -> layout -> components -> effects -->
   <link rel="stylesheet" href="css/variables.css">
@@ -25,9 +41,9 @@
 
   <header class="header">
     <div class="container header-inner">
-      <a href="#top"><img class="logo-img" src="assets/logo.webp" alt="GDG On Campus PW"></a>
+      <a class="brand" href="#top"><img class="logo-img" src="assets/logo-mark.webp" alt=""><span class="brand-text">Google Developer Group<br><small>on Campus PW</small></span></a>
       <nav class="nav">
-        <a href="#generator">Generator</a>
+        <a href="#pages">Poradnik</a>
         <a href="#gallery">Galeria</a>
         <!-- Link ustawia js/main.js z FORM_URL (js/data.js) -->
         <a id="nav-form" href="#" target="_blank" rel="noopener">Wrzuć pracę</a>
@@ -41,12 +57,12 @@
     <section class="hero">
       <div class="container">
         <!-- Kliknij 5x = easter egg -->
-        <img id="main-logo" class="main-logo" src="assets/logo.webp" alt="GDG On Campus PW">
+        <img id="main-logo" class="main-logo" src="assets/logo.webp" alt="GDG on Campus PW">
 
-        <h1>Nie masz pomysłu na projekt?<br><span class="gradient-text">Wylosuj motyw pracy.</span></h1>
-        <p class="muted">Kliknij, dostań temat, zrób stronę i wrzuć ją do galerii.</p>
-        <p class="muted small">Autor pomysłu: <strong>Lawarance Chettiar</strong></p> 
-        <a class="btn btn-primary" href="#generator">Losuj teraz</a>
+        <h1>GDG Jam Jar<br><span class="gradient-text">Flavor #1: Portfolio</span></h1>
+        <p class="muted">Wylosuj motyw, zrób w nim swoje portfolio i wrzuć je na GitHub Pages. Masz 2 godziny.</p>
+        <p class="muted small">Autor strony: <strong>Lawarance Chettiar</strong></p> 
+        <a class="btn btn-primary" href="#generator">Losuj motyw</a>
 
         <!-- Terminal (+ corgi pod spodem) -->
         <div class="terminal-wrapper">
@@ -62,10 +78,10 @@
             </div>
             <!-- Teksty terminala: zmieniaj śmiało. Kolory: t-green / t-blue / t-yellow -->
             <div class="terminal-text" id="terminal-text">
-              <span class="t-green">[INIT]</span> Witaj w Motywy Pracy!<br>
-              <span class="t-blue">[INFO]</span> Wylosuj motyw i zrób do niego stronę<br>
-              <span class="t-red">[HINT]</span> nie wiesz jak zacząć? Sprawdź Pinterest<br>
-              <span class="t-yellow">[TODO]</span> Gdy skończysz, wrzuć link do galerii ↓
+              <span class="t-green">[INIT]</span> Witaj na GDG Jam Jar!<br>
+              <span class="t-blue">[INFO]</span> Wylosuj motyw i zrób w nim swoje portfolio<br>
+              <span class="t-red">[HINT]</span> Szukasz inspiracji? Sprawdź Pinterest. AI też wolno<br>
+              <span class="t-yellow">[TODO]</span> Wrzuć na GitHub Pages i dodaj link do galerii ↓
             </div>
           </div>
         </div>
@@ -92,6 +108,23 @@
       </div>
     </section>
 
+    <!-- PORADNIK: GitHub Pages -->
+    <section id="pages" class="section">
+      <div class="container">
+        <h2>Wrzuć na GitHub Pages</h2>
+        <div class="card">
+          <ol class="steps">
+            <li>Zaloguj się na <a href="https://github.com" target="_blank" rel="noopener">GitHubie</a>.</li>
+            <li>Kliknij <strong>New repository</strong>, nadaj nazwę (np. <code>portfolio</code>), ustaw <strong>Public</strong>, zaznacz <strong>Add README</strong> i utwórz.</li>
+            <li><strong>Add file → Upload files</strong>, przeciągnij pliki strony i kliknij <strong>Commit changes</strong>. Plik <code>index.html</code> musi leżeć w głównym folderze.</li>
+            <li><strong>Settings → Pages</strong>: Source <strong>Deploy from a branch</strong>, branch <code>main</code>, folder <code>/ (root)</code>, <strong>Save</strong>.</li>
+            <li>Po 1-2 minutach strona działa pod <code>https://twoj-nick.github.io/portfolio/</code>. Ten link wrzucasz do galerii.</li>
+          </ol>
+          <p class="muted small">Działa wszystko, co jest zwykłymi plikami: HTML, CSS, JS, obrazki. Projekty wymagające budowania (np. React z Vite) nie ruszą bez dodatkowej konfiguracji. Wielkość liter w nazwach plików ma znaczenie: <code>Style.css</code> to nie <code>style.css</code>.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- GALERIA -->
     <section id="gallery" class="section">
       <div class="container">
@@ -107,6 +140,16 @@
         <p class="muted">Wrzuć link do swojej strony.</p>
         <!-- Link do forms ustawiasz w js/data.js (FORM_URL) -->
         <a id="btn-form" class="btn btn-secondary" href="#" target="_blank" rel="noopener">Wrzuć swoją stronę</a>
+      </div>
+    </section>
+
+    <!-- ANKIETA -->
+    <section id="survey" class="section">
+      <div class="container center">
+        <h2>Jak było?</h2>
+        <p class="muted">Anonimowa ankieta, 2 minuty. Pomoże nam zrobić kolejny Jam Jar lepiej.</p>
+        <!-- Link do ankiety ustawiasz w js/data.js (SURVEY_URL) -->
+        <a id="btn-survey" class="btn btn-primary" href="#" target="_blank" rel="noopener">Wypełnij ankietę</a>
       </div>
     </section>
 
@@ -133,7 +176,7 @@
         </a>
 
       </div>
-      <p class="muted small">GDG na Campus Politechniki Warszawskiej</p>
+      <p class="muted small">GDG on Campus Politechnika Warszawska</p>
     </div>
   </footer>
 
