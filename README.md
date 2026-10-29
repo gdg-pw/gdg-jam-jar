@@ -1,69 +1,87 @@
-# GDG Jam Jar
+<div align="center">
+  <img src="assets/logo.webp" alt="GDG on Campus PW" width="140" />
 
-GDG Jam Jar to seria krótkich spotkań [GDG on Campus Politechnika Warszawska](https://gdg.community.dev/gdg-on-campus-politechnika-warszawska-warsaw-poland/). Spotykamy się na około dwie godziny i każdy wychodzi z gotową, działającą rzeczą.
+  <h1>GDG Jam Jar</h1>
+  <p>Dwie godziny, jeden wylosowany motyw i działająca strona na koniec.</p>
 
-To nie są warsztaty krok po kroku i nikt nie prowadzi zajęć. To luźny jam: każdy robi swój projekt, a przy okazji podgląda innych i wymienia się uwagami. Każda edycja ma inny „flavor", czyli temat. Zaczynamy od prostych, a jeśli format się przyjmie, kolejne będą ambitniejsze.
+  <a href="https://jamjar.gdgpw.pl">
+    <img src="https://img.shields.io/badge/%E2%96%B6%20Otw%C3%B3rz%20stron%C4%99-jamjar.gdgpw.pl-34A853?style=for-the-badge&labelColor=181818" alt="Otwórz stronę" />
+  </a>
 
-## Flavor #1: Portfolio
+  <br/><br/>
 
-Pierwsza edycja: 29 października 2026, Stara Kotłownia PW.
+  <img src="https://img.shields.io/badge/Flavor%20%231-Portfolio-FBBC04?style=flat-square&labelColor=181818" alt="Flavor #1: Portfolio" />
+  <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white&labelColor=181818" alt="HTML" />
+  <img src="https://img.shields.io/badge/CSS-663399?style=flat-square&logo=css&logoColor=white&labelColor=181818" alt="CSS" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black&labelColor=181818" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/nginx-009639?style=flat-square&logo=nginx&logoColor=white&labelColor=181818" alt="nginx" />
+</div>
 
-1. Losujesz motyw, np. pixel art, cyberpunk albo Windows 95.
-2. Robisz w nim swoją stronę portfolio. Kod piszesz sam albo z pomocą AI.
-3. Wrzucasz ją na GitHub Pages, więc wychodzisz z działającym linkiem.
-4. Na koniec każdy pokazuje, co mu wyszło.
+---
 
-Technologia jest dowolna, byle strona działała na GitHub Pages jako zwykłe pliki statyczne.
+<div align="center">
+  <img src=".github/readme/hero.webp" alt="Strona GDG Jam Jar" width="900" />
+</div>
+<br/>
 
-## Co jest w tym repo
+**GDG Jam Jar** to seria krótkich spotkań [GDG on Campus PW](https://gdg.community.dev/gdg-on-campus-politechnika-warszawska-warsaw-poland/). Nikt nie prowadzi zajęć krok po kroku: każdy robi swój projekt, podgląda innych i wychodzi z gotową rzeczą. Każda edycja ma swój „flavor”, czyli temat.
 
-Strona, z której korzystamy na wydarzeniu: generator motywów z krótkim opisem każdego, poradnik wrzucania strony na GitHub Pages i galeria prac uczestników zasilana z Google Forms. Czysty HTML, CSS i JS, bez buildów i zależności.
+---
 
-## Uruchomienie
+## 🎲 Flavor #1: Portfolio
 
-Otwórz `index.html` w przeglądarce albo postaw prosty serwer:
+<div align="center">
+  <img src=".github/readme/generator.webp" alt="Losowanie motywu" width="800" />
+</div>
 
-```bash
-python3 -m http.server 8000
-```
+<p align="center"><sub>29 października 2026 · Stara Kotłownia PW</sub></p>
 
-i wejdź na http://localhost:8000. Galeria z Google Sheets działa tylko przez serwer, bo przeglądarka blokuje pobieranie arkusza ze strony otwartej jako plik.
+| | |
+|--|--|
+| 🎲 | Losujesz motyw z 41: od Windows 95 i pixel artu po dark academia |
+| 🎨 | Robisz w nim swoje portfolio, sam albo z pomocą AI |
+| 🚀 | Wrzucasz je na GitHub Pages według poradnika na stronie |
+| 🖼️ | Dodajesz link przez formularz i Twoja praca ląduje w galerii |
 
-## Gdzie co zmieniać
+---
 
-| Co                                                     | Plik                 |
-|--------------------------------------------------------|----------------------|
-| Motywy i ich opisy, link do formularza, arkusz galerii | `js/data.js`         |
-| Teksty, terminal, poradnik, socials, OG tagi           | `index.html`         |
-| Kolory, czcionki, zaokrąglenia                         | `css/variables.css`  |
-| Przyciski, karty, generator, poradnik                  | `css/components.css` |
-| Terminal, tło, logo, corgi                             | `css/effects.css`    |
-| Logika losowania                                       | `js/generator.js`    |
-| Galeria                                                | `js/gallery.js`      |
-| Symbole w tle, easter eggi                             | `js/effects.js`      |
-| Logo, favicon, corgi, obrazek do podglądu linku        | `assets/`            |
+## 🖼️ Galeria na żywo
 
-Czcionki to Google Sans Flex (tekst) i Google Sans Code (terminal) z Google Fonts.
+Zgłoszenia z Google Forms trafiają do arkusza. Po akceptacji praca pojawia się w galerii na stronie, a strona sprawdza arkusz co minutę, więc na rzutniku nowe prace wskakują bez odświeżania.
 
-## Galeria z Google Forms
+---
 
-Zgłoszenia trafiają z formularza do arkusza Google. Do galerii idą tylko te, które ktoś zaakceptuje, wpisując cokolwiek w kolumnie `OK`. Zakładka `galeria` zbiera zaakceptowane wiersze i jest opublikowana jako CSV. Jej adres siedzi w `GALLERY_CSV_URL` w `js/data.js`, a strona sprawdza arkusz co minutę.
+## 📱 Na telefonie
 
-Dane z formularza traktujemy jak niezaufane: wszystko jest escapowane, a do galerii przechodzą tylko linki `https://`.
+<table>
+  <tr>
+    <td align="center"><img src=".github/readme/mobile.webp" alt="Start na telefonie" width="260" /></td>
+    <td align="center"><img src=".github/readme/mobile-generator.webp" alt="Generator na telefonie" width="260" /></td>
+  </tr>
+</table>
 
-## Easter eggi
+---
 
-- Kliknij duże logo 5 razy.
-- Konami code: ↑ ↑ ↓ ↓ ← → ← → B A
+## 🐕 Easter eggi
 
-## Deploy
+<div align="center">
+  <img src=".github/readme/corgi.webp" alt="Corgi wyskakuje zza terminala" width="700" />
+</div>
 
-Strona stoi na https://jamjar.gdgpw.pl i wdraża się sama. Wystarczy push na `main`: w ciągu ok. 2 minut serwer GDG buduje obraz z `Dockerfile`, sprawdza nową wersję obok starej i dopiero wtedy ją podmienia. Jak coś się wysypie, zostaje poprzednia wersja.
+Kliknij duże logo 5 razy albo wpisz `↑ ↑ ↓ ↓ ← → ← → B A`.
 
-Każdy nowy plik w repo trafia na stronę, chyba że jest wpisany w `.dockerignore`. Portu i montowań w `docker-compose.yml` nie zmieniaj, serwer odrzuci taki deploy.
+---
 
-Lokalnie tak samo jak na serwerze: `docker compose up --build` i http://localhost:8092.
+## Pod maską
 
-## Autor
+- Czysty HTML, CSS i JS. Bez buildów i zależności.
+- Motywy, linki i arkusz galerii są w `js/data.js`, a kolory i czcionki w `css/variables.css`.
+- Galeria pokazuje zgłoszenia, które ktoś zaakceptował w kolumnie `OK` arkusza. Dane z formularza są escapowane, a przechodzą tylko linki `https://`.
+- Lokalnie: `python3 -m http.server` albo `docker compose up --build` i http://localhost:8092.
+- Push na `main` to deploy na jamjar.gdgpw.pl w ok. 2 minuty. Portu i montowań w `docker-compose.yml` nie zmieniaj, bo serwer odrzuci taki deploy.
 
-Strona: Lawarance Chettiar ([@lawarance](https://github.com/lawarance)). Wydarzenie organizuje GDG on Campus PW.
+---
+
+<div align="center">
+  <sub>Strona: <a href="https://github.com/lawarance">Lawarance Chettiar</a> &nbsp;·&nbsp; Organizuje <a href="https://gdg.community.dev/gdg-on-campus-politechnika-warszawska-warsaw-poland/">GDG on Campus PW</a> &nbsp;·&nbsp; <a href="https://jamjar.gdgpw.pl">jamjar.gdgpw.pl</a></sub>
+</div>
