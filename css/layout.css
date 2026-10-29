@@ -17,7 +17,7 @@ html { scroll-padding-top: 60px; }   /* = wysokość headera, nagłówki sekcji 
 }
 .brand { display: flex; align-items: center; gap: 0.7rem; color: var(--text-main); }
 .brand:hover { color: var(--text-main); }
-.brand-text { font-size: 0.95rem; font-weight: 600; line-height: 1.2; transform: translateY(6px); }  /* środek nawiasów, nie obrazka (corgi wystaje u góry) */
+.brand-text { font-size: 0.95rem; font-weight: 600; line-height: 1.2; }
 .brand-text small { font-size: inherit; font-weight: 400; color: var(--text-muted); }
 .nav { display: flex; gap: 1.25rem; }
 .nav a { color: var(--text-muted); font-size: 0.95rem; }

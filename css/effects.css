@@ -27,7 +27,7 @@
 main, .footer { position: relative; z-index: 1; }
 
 /* ---------- Logo ---------- */
-.logo-img { height: 48px; width: auto; display: block; }     /* znak w headerze */
+.logo-img { height: 48px; width: auto; display: block; transform: translateY(-11.5%); }   /* znak w headerze. Przesunięty w górę o corgiego nad nawiasami, żeby na środku headera były nawiasy, nie cały obrazek */
 
 .main-logo {                                                  /* duże logo w hero */
   width: 320px; max-width: 70%; height: auto;
